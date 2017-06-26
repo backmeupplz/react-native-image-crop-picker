@@ -280,7 +280,7 @@ RCT_EXPORT_METHOD(openCropper:(NSDictionary *)options
     self.cropOnly = YES;
 
     NSString *path = [options objectForKey:@"path"];
-    NSURL *url = [NSURL URLWithString:path];
+    // NSURL *url = [NSURL URLWithString:path];
 
     [self.bridge.imageLoader loadImageWithURLRequest:[RCTConvert NSURLRequest:path] callback:^(NSError *error, UIImage *image) {
         if (error) {
@@ -332,7 +332,7 @@ RCT_EXPORT_METHOD(openCropper:(NSDictionary *)options
         CGPoint loadingLabelLocation = loadingView.center;
         loadingLabelLocation.y += [activityView bounds].size.height;
         loadingLabel.center = loadingLabelLocation;
-        loadingLabel.textAlignment = UITextAlignmentCenter;
+        loadingLabel.textAlignment = NSTextAlignmentCenter;
         loadingLabel.text = [self.options objectForKey:@"loadingLabelText"];
         [loadingLabel setFont:[UIFont boldSystemFontOfSize:18]];
         [loadingView addSubview:loadingLabel];
@@ -387,7 +387,7 @@ RCT_EXPORT_METHOD(openCropper:(NSDictionary *)options
      }];
 }
 
-- (NSDictionary*) createAttachmentResponse:(NSString*)filePath withWidth:(NSNumber*)width withHeight:(NSNumber*)height withMime:(NSString*)mime withSize:(NSNumber*)size withData:(NSString*)data {
+- (NSDictionary*) createAttachmentResponse:(NSString*)filePath withWidth:(NSNumber*)width withHeight:(NSNumber*)height withMime:(NSString*)mime withSize:(NSNumber*)size withData:(id)data {
     return @{
              @"path": filePath,
              @"width": width,
