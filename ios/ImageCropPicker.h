@@ -34,7 +34,9 @@
   RCTBridgeModule,
   QBImagePickerControllerDelegate,
   RSKImageCropViewControllerDelegate,
-  RSKImageCropViewControllerDataSource>
+  RSKImageCropViewControllerDataSource,
+  UINavigationControllerDelegate,
+  UIImagePickerControllerDelegate>
 
 @property (nonatomic, strong) NSDictionary *defaultOptions;
 @property (nonatomic, strong) Compression *compression;
